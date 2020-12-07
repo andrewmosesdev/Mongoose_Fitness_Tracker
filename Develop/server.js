@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(morgan("develop"))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -17,8 +18,31 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useFindAndModify: false
 });
 
-// routes
-// app.use(require("./routes/api.js"));
+app.get("/api/workouts", (req, res) => {
+
+});
+
+app.post("/api/workouts", (req, res) => {
+
+});
+
+app.put("/api/workouts/:id", (req, res) => {
+    
+});
+
+app.get("/api/workouts/range", (req, res) => {
+    
+});
+
+app.get("/exercise", (req, res) => {
+    
+});
+
+app.get("/stats", (req, res) => {
+    
+});
+
+
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
