@@ -34,7 +34,8 @@ app.get("/api/workouts", (req, res) => {
 app.post("/api/workouts", (req, res) => {
   // create new workout document instance
   const createNewWorkout = new Workout({
-    day: new Date()
+    day: new Date(),
+    // exercises: 
   });
   // save it to the db or handle error
   createNewWorkout.save(error => {
