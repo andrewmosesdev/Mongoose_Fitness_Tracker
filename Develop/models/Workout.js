@@ -36,7 +36,7 @@ const workoutSchema = new Schema(
 );
 
 
-// mongoose virtual needs ES5 function here, arrow function is lexically bound ('this' will refer to the function it's inside) and will result in an error
+// mongoose virtual needs ES5 function here, arrow function is lexically bound (so, 'this' will refer to the function it's inside) and will result in an error
 workoutSchema.virtual("totalDuration").get(function() {
   let durationSum = 0;
   this.exercises.forEach((sum) => {
